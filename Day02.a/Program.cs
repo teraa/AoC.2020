@@ -1,8 +1,7 @@
 using System;
-using System.Linq;
 
 // min-max c: password
-//    i   j    
+//    i   j
 
 int valid = 0;
 

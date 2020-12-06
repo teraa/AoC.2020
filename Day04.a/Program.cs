@@ -10,7 +10,7 @@ string? line;
 do
 {
     line = Console.ReadLine();
-    
+
     if (line is null || line.Length == 0)
     {
         if (!required.Except(fields).Any())
