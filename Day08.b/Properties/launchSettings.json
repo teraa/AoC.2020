@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Day08.b": {
+      "commandName": "Project",
+      "commandLineArgs": "< input.txt",
+      "workingDirectory": "."
+    }
+  }
+}
