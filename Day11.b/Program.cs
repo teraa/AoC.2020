@@ -23,27 +23,25 @@ do
     var newSeats = new Dictionary<Seat, bool>(seats);
     foreach (var (seat, status) in seats)
     {
-        int count = GetVisibleCount(seat);
+        int occupied = CountOccupiedVisible(seat);
 
-        if (status && count >= 5)
+        if (status && occupied >= 5)
         {
             newSeats[seat] = false;
             changes++;
         }
-        else if (!status && count == 0)
+        else if (!status && occupied == 0)
         {
             newSeats[seat] = true;
             changes++;
         }
     }
-
     seats = newSeats;
 } while (changes > 0);
 
-
 Console.WriteLine(CountOccupied());
 
-int GetVisibleCount(Seat seat)
+int CountOccupiedVisible(Seat seat)
 {
     int count = 0;
 
@@ -51,22 +49,18 @@ int GetVisibleCount(Seat seat)
     {
         for (int y = -1; y <= 1; y++)
         {
-            if (x != y || x != 0)
+            if (x == y && x == 0) continue;
+
+            Seat target = seat;
+            do
             {
-                Seat target = seat;
-                do
+                target = new Seat(target.X + x, target.Y + y);
+                if (seats.TryGetValue(target, out var status))
                 {
-                    target = new Seat(target.X + x, target.Y + y);
-                    if (seats.TryGetValue(target, out var status))
-                    {
-                        if (status)
-                            count++;
-
-                        break;
-                    }
-
-                } while (target.X < max.x && target.Y < max.y && target.X >= 0 && target.Y >= 0);
-            }
+                    if (status) count++;
+                    break;
+                }
+            } while (target.X < max.x && target.Y < max.y && target.X >= 0 && target.Y >= 0);
         }
     }
 
@@ -77,8 +71,7 @@ int CountOccupied()
 {
     int count = 0;
     foreach (var (seat, status) in seats)
-        if (status)
-            count++;
+        if (status) count++;
 
     return count;
 }
