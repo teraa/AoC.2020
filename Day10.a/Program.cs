@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 const int MaxDifference = 3;
@@ -8,7 +7,6 @@ var list = new List<int>();
 string? line;
 while ((line = Console.ReadLine()) is not null)
     list.Add(int.Parse(line));
-
 
 list.Sort();
 
