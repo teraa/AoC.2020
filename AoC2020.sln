@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
@@ -62,7 +62,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day14.a", "Day14.a\Day14.a.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day14.b", "Day14.b\Day14.b.csproj", "{9801DE01-4B0B-42FB-81AD-2CF26A97382F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day15", "Day15\Day15.csproj", "{D3D1191A-EBEB-4206-91F4-4BDE286E6B33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day15.a", "Day15.a\Day15.a.csproj", "{D3D1191A-EBEB-4206-91F4-4BDE286E6B33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

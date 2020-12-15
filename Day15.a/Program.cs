@@ -18,9 +18,7 @@ while (i < starting.Length)
 int n = 0;
 do
 {
-    var next = dict.TryGetValue(n, out var idx)
-        ? i - idx
-        : 0;
+    var next = dict.TryGetValue(n, out var idx) ? i - idx : 0;
 
     dict[n] = i++;
     n = next;
